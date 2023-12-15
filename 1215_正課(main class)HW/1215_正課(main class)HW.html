@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #result, #celebration {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #celebration {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Number Guessing Game</h1>
+        <div id="result"></div>
+        <div id="celebration"></div>
+        <p>Please reopen this webpage and play again!</p>
+    </div>
+    <script>
+        var rand = Math.floor(Math.random() * 10) + 1;
+        var userGuess;
+
+        while (true) {
+            userGuess = parseInt(prompt("Guess a number between 1 and 10:"));
+
+            if (userGuess === rand) {
+                document.getElementById("result").innerHTML = "The correct number is " + rand + "!";
+                document.getElementById("celebration").innerHTML = "🎉 Congratulations! You guessed it! 🎉";
+                break;
+            } else {
+                alert("Wrong guess. Try again!");
+            }
+        }
+    </script>
+</body>
+</html>
